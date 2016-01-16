@@ -50,7 +50,7 @@ int insert(char s[], int tok)
   if(lastentry + 1 >= SYMMAX)
      error("symbol table full");
   if (lastchar + len + 1 >= STRMAX)
-     error("lexeme array full");  
+     error("lexeme array full");
   lastentry = lastentry + 1;
   symtable[lastentry].token = tok;
   symtable[lastentry].lexptr = &lexemes[lastchar + 1];
