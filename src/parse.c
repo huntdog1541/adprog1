@@ -10,8 +10,8 @@ int parse()
 	FILE * fin = fopen("test.txt", "r");
 	char temp = getc(fin);
 	char str[256];
-	str[0] = temp;
 	int i = 0;
+	str[i] = temp;
  	while(temp != EOF)
 	{
  	str[i] = temp;
@@ -22,7 +22,7 @@ int parse()
 	//str[++i] = '\0';
 	int k = lookup(str);
 	printf("The word has a value of %d\n", k);
-	Strascii(str);
+	//Strascii(str);
 	trimString(str);
 	k = lookup(str);
 	k = getTokenType(k);
@@ -43,17 +43,16 @@ void Strascii(char * str)
 
 char * trimString(char * str)
 {
-	int i = 0, j = 0, length = strlen(str);
-	char * temp = (char * )malloc(sizeof(char) * (length + 1));
+	int i = 0, j = 0, length = 0;
+	length = strlen(str);
+	char temp[length];
 	while(isalnum(str[i]))
 	{
 		temp[j] = str[i];
-		i++;
-		j++;
+		i++;j++;
 	}
 	temp[j] = 0;
 	Strascii(temp);
 	strcpy(str, temp);
-	free(temp);
 	return str;
 }
