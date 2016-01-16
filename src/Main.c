@@ -11,7 +11,6 @@ int main(int argc, char ** argv)
 {
 	init();
 	printSymbol();
-	FILE * fin = fopen("test.txt", "r");
-	parse(fin);
+	parse();
 }
 //Here

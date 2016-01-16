@@ -5,8 +5,9 @@
 #include "symbol.h"
 #include "parse.h"
 
-int parse(FILE * fin)
+int parse()
 {
+	FILE * fin = fopen("test.txt", "r");
 	char temp = getc(fin);
 	char str[256];
 	str[0] = temp;
@@ -26,6 +27,7 @@ int parse(FILE * fin)
 	k = lookup(str);
 	k = getTokenType(k);
 	printf("The word has a value of %d\n", k);
+	fclose(fin);
 	return k;
 }
 
