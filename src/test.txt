@@ -1,3 +1,5 @@
 begin
 
+int main
+
 END

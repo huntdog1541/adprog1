@@ -19,6 +19,7 @@ int lastentry = 0;
 
 struct entry keywords[] = {
    "begin",BEGIN,
+	 "int", INT,
    "end", END,
    "div", DIV,
    "mod", MOD,
@@ -39,7 +40,7 @@ int lookup(char s[])
    for(p = lastentry; p > 0; p--)
     if(! strcmp(symtable[p].lexptr, s) )
        return p;
-       
+
    return NOT_FOUND;
 }
 

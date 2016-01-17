@@ -13,9 +13,8 @@
 #define DONE 260
 #define BEGIN 400
 #define END 401
+#define INT 402
 #define NOT_FOUND 0
 
 int tokenval;
 int lineno;
-
-
